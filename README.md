@@ -26,5 +26,5 @@ Please commit frequently to communicate your throughts while working on this ass
 Try not to spend more than 4 hours on this.  You are not necessarily expected to do everything in this assignment because of the short duration. 
 
 ## Tech 
-- Native Android and iOS frameworks only (no Flutter sorry) 
+- Native Android frameworks only (no Flutter sorry) 
 - Use whatever libraries you are comfortable with
