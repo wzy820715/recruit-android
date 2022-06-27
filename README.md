@@ -28,8 +28,9 @@ Try not to spend more than 4 hours on this.  You are not necessarily expected to
 
 ## Tech 
 > **_NOTE:_**
-Please stick to **Dagger 2** and the **View System** for this exercise. 
-While Hilt and Compose are great, we are not looking to evaluate you on those for _this_ exercise. 
+Please stick to **Dagger 2** and the **View System (XML)** for this exercise. 
+While Hilt and Compose are great, we are not looking to evaluate you on those for this exercise. 
 
 - Native Android frameworks only (no Flutter sorry) 
 - Aside from the above, use whatever libraries you are comfortable with
+- If you are unfamiliar with a something in the exercise template, leave a note and change it to better suite you.
