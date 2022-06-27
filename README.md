@@ -33,4 +33,4 @@ While Hilt and Compose are great, we are not looking to evaluate you on those fo
 
 - Native Android frameworks only (no Flutter sorry) 
 - Aside from the above, use whatever libraries you are comfortable with
-- If you are unfamiliar with a something in the exercise template, leave a note and change it to better suite you.
+- If you are unfamiliar with a something in the exercise template, leave a note and change it to better suit you.
