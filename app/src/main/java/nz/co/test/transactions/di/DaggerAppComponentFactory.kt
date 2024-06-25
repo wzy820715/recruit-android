@@ -10,10 +10,10 @@ import javax.inject.Provider
 
 class DaggerAppComponentFactory : AppComponentFactory() {
 
-    private val component = DaggerAppComponent.create()
+//    private val component = DaggerAppComponent.create()
 
     init {
-        component.inject(this)
+//        component.inject(this)
     }
 
     @Inject

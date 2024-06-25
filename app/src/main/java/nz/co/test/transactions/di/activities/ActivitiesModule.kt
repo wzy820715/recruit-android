@@ -6,11 +6,11 @@ import dagger.Provides
 import dagger.multibindings.IntoMap
 import nz.co.test.transactions.activities.MainActivity
 
-@Module
+//@Module
 class ActivitiesModule {
 
-    @Provides
-    @IntoMap
-    @ActivityClassKey(MainActivity::class)
+//    @Provides
+//    @IntoMap
+//    @ActivityClassKey(MainActivity::class)
     fun providesMainActivity(): Activity = MainActivity()
 }
