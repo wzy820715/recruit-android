@@ -6,6 +6,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import nz.co.test.transactions.common.Constants.BASE_URL
+import nz.co.test.transactions.services.BigDecimalJsonAdapter
+import nz.co.test.transactions.services.DateJsonAdapter
 import nz.co.test.transactions.services.TransactionsService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -30,6 +32,8 @@ class NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         val moshi = Moshi.Builder()
+            .add(BigDecimalJsonAdapter())
+            .add(DateJsonAdapter())
             .build()
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
