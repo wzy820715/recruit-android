@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/transactions">
+
+    <fragment
+        android:id="@+id/transactions"
+        android:name="nz.co.test.transactions.ui.transaction.TransactionsFragment"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions">
+        <action
+            android:id="@+id/action_to_detail"
+            app:destination="@id/transactionDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetail"
+        android:name="nz.co.test.transactions.ui.transaction.TransactionDetailFragment"
+        android:label="fragment_transactions_detail"
+        tools:layout="@layout/fragment_transaction_detail">
+        <argument
+            android:name="transaction"
+            app:argType="nz.co.test.transactions.services.Transaction" />
+    </fragment>
+
+</navigation>
