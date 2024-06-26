@@ -1,4 +1,4 @@
-<font color=#ff574f size=7>Project description </font>
+## >>> Project description <<<
 At the beginning, I tried to use Dagger2 for dependency injection, but it didn't work, AppComponentFactory seems to be a feature after Android 28, it doesn't use Dagger2 in the same way as before, and there aren't many related resources on the web. Due to the short development time. So I turned to Hilt.
 
 This project used Hilt and Navigation. Using single Activtiy and mutiple Fragments following the MVVM architecture.
