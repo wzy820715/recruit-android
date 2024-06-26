@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Transactions</string>
+    <string name="item_gst">GST: %1$s</string>
 </resources>

@@ -22,9 +22,13 @@ class TransactionDetailFragment : Fragment(R.layout.fragment_transaction_detail)
     }
 
     private fun initView() {
-        args.transaction.run {
+        args.transactionDetail.run {
             binding.credit.text = String.format(Locale.getDefault(), "%.2f", credit)
             binding.debit.text = String.format(Locale.getDefault(), "%.2f", debit)
+            binding.gst.text = context?.getString(
+                R.string.item_gst,
+                String.format(Locale.getDefault(), "%.2f", GST)
+            )
             binding.summary.text = summary
             binding.transactionDate.text = transactionDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
         }

@@ -7,15 +7,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import nz.co.test.transactions.R
+import nz.co.test.transactions.data.model.TransactionWrapper
 import nz.co.test.transactions.databinding.LayoutTransactionItemBinding
-import nz.co.test.transactions.services.Transaction
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-class TransactionAdapter : ListAdapter<Transaction, TransactionAdapter.ItemViewHolder>(REPO_COMPARATOR) {
+class TransactionAdapter : ListAdapter<TransactionWrapper, TransactionAdapter.ItemViewHolder>(REPO_COMPARATOR) {
 
     fun interface OnItemClickListener {
-        fun onItemClick(item: Transaction)
+        fun onItemClick(item: TransactionWrapper)
     }
 
     private var onItemClickListener: OnItemClickListener? = null
@@ -44,12 +44,17 @@ class TransactionAdapter : ListAdapter<Transaction, TransactionAdapter.ItemViewH
         private val binding = LayoutTransactionItemBinding.bind(itemView)
         private val credit = binding.credit
         private val debit = binding.debit
+        private val gst = binding.gst
         private val summary = binding.summary
         private val transactionDate = binding.transactionDate
 
-        fun bind(item: Transaction) {
+        fun bind(item: TransactionWrapper) {
             credit.text = String.format(Locale.getDefault(), "%.2f", item.credit)
             debit.text = String.format(Locale.getDefault(), "%.2f", item.debit)
+            gst.text = view.context.getString(
+                R.string.item_gst,
+                String.format(Locale.getDefault(), "%.2f", item.GST)
+            )
             summary.text = item.summary
             transactionDate.text = item.transactionDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
         }
@@ -57,12 +62,12 @@ class TransactionAdapter : ListAdapter<Transaction, TransactionAdapter.ItemViewH
     }
 
     companion object {
-        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<Transaction>() {
-            override fun areItemsTheSame(oldItem: Transaction, newItem: Transaction): Boolean =
+        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<TransactionWrapper>() {
+            override fun areItemsTheSame(oldItem: TransactionWrapper, newItem: TransactionWrapper): Boolean =
                 oldItem.id == newItem.id
 
 
-            override fun areContentsTheSame(oldItem: Transaction, newItem: Transaction): Boolean =
+            override fun areContentsTheSame(oldItem: TransactionWrapper, newItem: TransactionWrapper): Boolean =
                 oldItem.transactionDate == newItem.transactionDate
         }
     }

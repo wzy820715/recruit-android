@@ -23,8 +23,8 @@
         android:label="fragment_transactions_detail"
         tools:layout="@layout/fragment_transaction_detail">
         <argument
-            android:name="transaction"
-            app:argType="nz.co.test.transactions.services.Transaction" />
+            android:name="transactionDetail"
+            app:argType="nz.co.test.transactions.data.model.TransactionWrapper" />
     </fragment>
 
 </navigation>
