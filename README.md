@@ -1,3 +1,17 @@
+<font color=#ff574f size=7>Project description </font>
+At the beginning, I tried to use Dagger2 for dependency injection, but it didn't work, AppComponentFactory seems to be a feature after Android 28, it doesn't use Dagger2 in the same way as before, and there aren't many related resources on the web. Due to the short development time. So I turned to Hilt.
+
+This project used Hilt and Navigation. Using single Activtiy and mutiple Fragments following the MVVM architecture.
+
+<font color=#ff574f size=4>Implemented Features</font>
+- Fetch a list of transactions from api
+- Display transactions in RecyclerView
+- Sort the data in descending order using the transactionDate parameter
+- Go to a transaction detail page when click a transcation item in the RecyclerView
+- Calculate GST and show in the RecyclerView item
+- Color code transaction amounts (credit green, debit red)
+
+***
 
 # Android
 Create a simple application that will fetch a list of transactions from an api endpoint and display them in a list.  When a user selects a transaction they will be shown a second screen that will display a more detailed view of the transaction data. 
